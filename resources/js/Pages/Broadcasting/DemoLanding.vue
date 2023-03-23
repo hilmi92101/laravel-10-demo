@@ -1,0 +1,14 @@
+<template>     
+    <Layout>   
+        <h1>This is the Demo Landing Page</h1><br>   
+    </Layout>   
+       
+</template>     
+<script setup>      
+    import Layout from '@/Layouts/Broadcasting.vue';   
+    import { ref, } from 'vue'; 
+
+    import { router } from '@inertiajs/vue3';
+
+       
+</script>

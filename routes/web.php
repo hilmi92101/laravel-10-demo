@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 use App\Http\Controllers\Landing\IndexController;
+use App\Http\Controllers\Broadcasting\DemoController as BroadcastingDemoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +20,10 @@ use App\Http\Controllers\Landing\IndexController;
 
 Route::get('/', [IndexController::class, 'index'])->name('landing.index');
 Route::get('/about', [IndexController::class, 'about'])->name('landing.about');
+
+Route::get('/broadcasting/demo', [BroadcastingDemoController::class, 'demoLanding'])->name('broadcasting.demoLanding');
+Route::get('/broadcasting/demo/trigger', [BroadcastingDemoController::class, 'demoTrigger'])->name('broadcasting.demoTrigger');
+Route::post('/broadcasting/demo/trigger/attempt', [BroadcastingDemoController::class, 'demoTriggerAttempt'])->name('broadcasting.demoTriggerAttempt');
 
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [
