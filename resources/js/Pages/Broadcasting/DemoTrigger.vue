@@ -8,11 +8,13 @@
 </template>     
 <script setup>
 import Layout from "@/Layouts/Broadcasting.vue";
-import { ref } from "vue";
+import  { ref } from "vue";
+
 
 import { router } from "@inertiajs/vue3";
 
 const triggerMessage = () => {
+
     axios
     .post(route('broadcasting.demoTriggerAttempt'))
     .then((response) => {

@@ -39,7 +39,7 @@ class DemoMessage implements ShouldBroadcast
 
     public function broadcastAs() 
     { 
-        return 'demo-message'; 
+        return 'demo-message-event'; 
     }
 
     public function broadcastWith(): array

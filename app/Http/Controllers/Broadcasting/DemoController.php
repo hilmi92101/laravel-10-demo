@@ -14,7 +14,6 @@ class DemoController extends Controller
     { 
         return Inertia::render('Broadcasting/DemoLanding'); 
     }
-
     
     public function demoTrigger()  
     {  
