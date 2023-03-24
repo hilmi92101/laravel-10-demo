@@ -8,19 +8,11 @@
     import Layout from '@/Layouts/Broadcasting.vue';   
     import { ref, onMounted } from 'vue'; 
 
-    import echo from "@/pusher.js";
-
-    const onload = () => { 
-        echo.channel('demo-message')
-        .listen('.demo-message-event', (e) => {
-            console.log(e);
-        }).error((error) => {
-            console.error(error);
-        });
-    }
+    import { EchoObj, CheckStatus, DemoMessage } from "@/Pusher/index.js";
 
     onMounted(() => { 
-        onload()
+        CheckStatus(EchoObj);
+        DemoMessage(EchoObj)
     });
        
 </script>
