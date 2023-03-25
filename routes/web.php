@@ -21,9 +21,9 @@ use App\Http\Controllers\Broadcasting\DemoController as BroadcastingDemoControll
 Route::get('/', [IndexController::class, 'index'])->name('landing.index');
 Route::get('/about', [IndexController::class, 'about'])->name('landing.about');
 
-Route::get('/broadcasting/demo', [BroadcastingDemoController::class, 'demoLanding'])->name('broadcasting.demoLanding');
-Route::get('/broadcasting/demo/trigger', [BroadcastingDemoController::class, 'demoTrigger'])->name('broadcasting.demoTrigger');
-Route::post('/broadcasting/demo/trigger/attempt', [BroadcastingDemoController::class, 'demoTriggerAttempt'])->name('broadcasting.demoTriggerAttempt');
+Route::get('/broadcasting/demo', [BroadcastingDemoController::class, 'landing'])->name('broadcasting.landing');
+Route::get('/broadcasting/demo/trigger', [BroadcastingDemoController::class, 'triggerPage'])->name('broadcasting.triggerPage');
+Route::post('/broadcasting/demo/trigger/attempt', [BroadcastingDemoController::class, 'triggerPageAttempt'])->name('broadcasting.triggerPageAttempt');
 
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [
