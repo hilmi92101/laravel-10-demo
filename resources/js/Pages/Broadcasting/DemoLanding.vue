@@ -11,7 +11,7 @@
     import { EchoObj, CheckStatus, DemoMessage } from "@/Pusher/index.js";
 
     onMounted(() => { 
-        CheckStatus(EchoObj);
+        //CheckStatus(EchoObj);
         DemoMessage(EchoObj)
     });
        

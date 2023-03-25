@@ -16,7 +16,7 @@ import { router } from "@inertiajs/vue3";
 const triggerMessage = () => {
 
     axios
-    .post(route('broadcasting.demoTriggerAttempt'))
+    .post(route('broadcasting.triggerPageAttempt'))
     .then((response) => {
         console.log(response.data);
     })

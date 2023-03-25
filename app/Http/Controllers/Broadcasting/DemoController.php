@@ -19,7 +19,7 @@ class DemoController extends Controller
     
     public function triggerPage()  
     {  
-        return Inertia::render('Broadcasting/DemoTrigger'); 
+        return Inertia::render('Broadcasting/DemoTriggerPage'); 
     }
 
     public function triggerPageAttempt()  

@@ -22,8 +22,8 @@ Route::get('/', [IndexController::class, 'index'])->name('landing.index');
 Route::get('/about', [IndexController::class, 'about'])->name('landing.about');
 
 Route::get('/broadcasting/demo', [BroadcastingDemoController::class, 'landing'])->name('broadcasting.landing');
-Route::get('/broadcasting/demo/trigger', [BroadcastingDemoController::class, 'triggerPage'])->name('broadcasting.triggerPage');
-Route::post('/broadcasting/demo/trigger/attempt', [BroadcastingDemoController::class, 'triggerPageAttempt'])->name('broadcasting.triggerPageAttempt');
+Route::get('/broadcasting/demo/trigger-page', [BroadcastingDemoController::class, 'triggerPage'])->name('broadcasting.triggerPage');
+Route::post('/broadcasting/demo/trigger-page/attempt', [BroadcastingDemoController::class, 'triggerPageAttempt'])->name('broadcasting.triggerPageAttempt');
 
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [
