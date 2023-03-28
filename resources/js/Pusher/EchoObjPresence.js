@@ -13,12 +13,36 @@ const echoConfig = {
     forceTLS: (import.meta.env.VITE_PUSHER_SCHEME || 'https') === 'https',
     enabledTransports: ['ws', 'wss'],
     encrypted: true,
-    authEndpoint: '/api/broadcasting/auth',
-    auth: {
-        headers: {
-            'Authorization': 'Bearer ' + localStorage.getItem('visitorToken')
-        }
-    }
+    // authEndpoint: '/api/broadcasting/auth',
+    // auth: {
+    //     headers: {
+    //         'Authorization': 'Bearer ' + localStorage.getItem('visitorToken')
+    //     }
+    // }
+    authorizer: (channel, options) => {
+        return {
+            authorize: (socketId, callback) => {
+                var data = {
+                    socket_id: socketId,
+                    channel_name: channel.name
+                }
+                let config = {  
+                    headers: {  
+                        'Accept': 'application/json',  
+                        'Authorization': 'Bearer ' + localStorage.getItem('visitorToken'),  
+                    }  
+                }
+
+                axios.post('/api/broadcasting/auth', data, config)
+                .then(response => {
+                    callback(false, response.data);
+                })
+                .catch(error => {
+                    callback(true, error);
+                });
+            }
+        };
+    },
     
 };
 

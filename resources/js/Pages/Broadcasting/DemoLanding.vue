@@ -20,9 +20,9 @@
 
             //EchoObjPresence.join(`presence-visitors-counter`)
             EchoObjPresence.join(`visitors-counter`)
-                .here((users) => {
-                    console.log('Here', users);
-                })
+                // .here((users) => {
+                //     console.log('Here', users);
+                // })
                 .joining((user) => {
                     console.log('Joining', user);
                 })
@@ -34,6 +34,7 @@
                 // })
                 .error((error) => {
                     console.error(error);
+                    console.error(error.error);
                 });
 
 

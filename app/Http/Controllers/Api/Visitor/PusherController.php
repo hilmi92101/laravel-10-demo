@@ -15,7 +15,7 @@ use App\Models\Visitor;
 class PusherController extends Controller
 {
     private $visitor , $token, $token_expires_at;
-    private $token_name = 'visitor-token';
+    private $token_name = 'visitor-token-2';
     private $hours = 12;
 
     public function getToken(Request $request)
@@ -59,7 +59,9 @@ class PusherController extends Controller
         $visitor = $this->visitor;
         $expires_at = now()->addHours($this->hours);
 
-        $this->token = $visitor->createToken($this->token_name, ['*'], null, $expires_at)->accessToken;
+        //$this->token = $visitor->createToken($this->token_name, ['*'], null, $expires_at)->accessToken;
         $this->token_expires_at = $expires_at->toDateTimeString();
+
+        $this->token = $visitor->createToken($this->token_name)->plainTextToken;
     }
 }

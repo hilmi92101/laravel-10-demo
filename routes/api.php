@@ -16,9 +16,13 @@ use App\Http\Controllers\Api\Visitor\PusherController;
 |
 */
 
-Broadcast::routes(['middleware' => ['auth:api']]);
 
 Route::post('/visitor/get/token', [PusherController::class, 'getToken'])->name('visitor.getToken');
+
+//Broadcast::routes(['middleware' => ['auth:visitor']]);
+//Broadcast::routes(['middleware' => ['auth:sanctum']]);
+Broadcast::routes();
+
 
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
