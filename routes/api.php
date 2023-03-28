@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Api\Visitor\PusherController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Broadcast::routes(['middleware' => ['auth:api']]);
+
+Route::post('/visitor/get/token', [PusherController::class, 'getToken'])->name('visitor.getToken');
+
+
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
